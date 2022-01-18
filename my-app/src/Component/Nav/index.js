@@ -1,26 +1,55 @@
 import React from 'react';
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
-function Nav() {
+function Nav(props) {
+  
+  const {
+    categories = [],
+    setCurrentCategory,
+    //contactSelected,
+    currentCategory,
+    setContactSelected,
+  } = props;
+
+
 
   return (
-    <header>
-      <h2>
-      <span role="img" aria-label="laptop">💻 </span> Cienna Mortenson
-   
-  </h2>
-  <nav>
-    <ul className="flex-row">
-        <a href="#about">
-          <span>About me</span>
-        </a>
-      <ul>
-        < a href="#contact">
-        <span>Contact</span>
-        </a>
+    <header className="flex-row px-1">
+    <h2>
+      <a data-testid="link" href="/">
+        <span role="img" aria-label="laptop"> 💻 </span> Cienna Mortenson
+      </a>
+    </h2>
+    <nav>
+      <ul className="flex-row">
+        <li className="mx-2">
+        <a data-testid="about" href="#about">
+            About me
+          </a>
+        </li>
+        <li className="mx-2">
+          <span>Contact</span>
+        </li>
+        {categories.map((category) => (
+            <li 
+            className={`mx-1 ${
+                currentCategory.name === category.name && 'navActive'
+                }`} 
+                key={category.name}>
+              <span
+                onClick={() => {
+                  setCurrentCategory(category)
+                }}
+              >
+              {capitalizeFirstLetter(category.name)}
+            </span>
+          </li>
+        ))}
       </ul>
-    </ul>
-  </nav>
-    </header>
+    </nav>
+  </header>
+  
+       
   );
 }
 
