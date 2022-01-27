@@ -1,54 +1,44 @@
 import React from 'react';
-import { capitalizeFirstLetter } from "../../utils/helpers";
+import { Navbar } from "react-bootstrap";
+//import { capitalizeFirstLetter } from "../../utils/helpers";
+import {NavLink} from "react-router-dom";
 
 function Nav(props) {
   
-  const {
-    categories = [],
-    setCurrentCategory,
+  //const {
+    //categories = [],
+    //setCurrentCategory,
     //contactSelected,
-    currentCategory,
-    setContactSelected,
-  } = props;
+    //currentCategory,
+    //setContactSelected,
+  //} = props;
 
 
 
   return (
-    <header className="flex-row px-1">
-    <h2>
-      <a data-testid="link" href="/">
-        <span role="img" aria-label="laptop"> 💻 </span> Cienna Mortenson
-      </a>
-    </h2>
-    <nav>
-      <ul className="flex-row">
-        <li className="mx-2">
-        <a data-testid="about" href="#about">
-            About me
-          </a>
-        </li>
-        <li className="mx-2">
-          <span>Contact</span>
-        </li>
-        {categories.map((category) => (
-            <li 
-            className={`mx-1 ${
-                currentCategory.name === category.name && 'navActive'
-                }`} 
-                key={category.name}>
-              <span
-                onClick={() => {
-                  setCurrentCategory(category)
-                }}
-              >
-              {capitalizeFirstLetter(category.name)}
-            </span>
+    <div>
+      <Navbar expand="lg" bg="primary" sticky="top">
+      <NavLink className="nav-link" to="/">
+        </NavLink>
+        <ul className="navbar-nav ml-auto navitem-indent">
+          <li className="nav-item">
+            <NavLink to="/about">
+              <div className="nav-font text-light">My Info</div>
+            </NavLink>
           </li>
-        ))}
-      </ul>
-    </nav>
-  </header>
-  
+          <li className="nav-item">
+            <NavLink to="/portfolio">
+              <div className="nav-font text-light">Projects</div>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/contact">
+              <div className="nav-font text-light">Contact</div>
+            </NavLink>
+          </li>
+        </ul>
+      </Navbar>
+    </div>
        
   );
 }

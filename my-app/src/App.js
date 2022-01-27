@@ -5,7 +5,7 @@ import Footer from './Component/Footer';
 //import Nav from './Component/Nav';
 import About from './Component/About';
 //import Contact from "./Component/Contact";
-import Project from "./Component/Project";
+import Projects from "./Component/Projects";
 
 //import logo from './logo.svg';
 
@@ -13,7 +13,7 @@ function App() {
   return (
    <div>
     <main>
-      <Project></Project>
+      <Projects></Projects>
         <About></About>
         <h1>
           <Header></Header>
