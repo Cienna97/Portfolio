@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import Header from './Component/Header';
 import Footer from './Component/Footer';
 //import Nav from './Component/Nav';
@@ -8,20 +9,18 @@ import Project from "./Component/Project";
 
 //import logo from './logo.svg';
 
-import './App.css';
-
 function App() {
   return (
-    <div>
-
+   <div>
     <main>
       <Project></Project>
         <About></About>
         <h1>
-          <Header />
-          <Footer />
+          <Header></Header>
+          <Footer/>
         </h1>
       </main>
+      
     </div>
   );
 }
