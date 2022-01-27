@@ -1,6 +1,6 @@
-import React from 'react';
-//import ReactDOM from 'react-dom';
-//import { validateEmail } from '../../utils/helpers';
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import { validateEmail } from '../../utils/helpers';
 
 function ContactForm() {
 
