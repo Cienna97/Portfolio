@@ -1,43 +1,57 @@
-import React from 'react';
-import Work from "./Work";
+import React from "react";
 
-
- function Project() {
+function Project(props) {
     return (
-      <div>
-        
-   <form>
-            <h1>Projects</h1>
-        </form>
-        <Work working={working} />
-      </div>
+        <div>
+            {props.projects.map((project) => (
+                <div  className='whole-card'>
+                    <div>
+                    <p className="title" key={project.id}>
+                                    {project.title}
+                                </p>
+                        <figure>
+                            <a href={project.live} target="_blank" rel="noreferrer">
+                                <img className="img"src={process.env.PUBLIC_URL + project.image} alt="Placeholder image" />
+                            </a>
+                        </figure>
+                    </div>
+                    <div className="card-content">
+                        <div className="media">
+                            <div className="media-left"></div>
+                            <div className="media-content">
+                               
+                            </div>
+                        </div>
+
+                        <div>
+                            {project.description}
+                            <div className="card">
+                                <div>
+                                    <a
+                                        href={project.repo}
+                                        className="card-footer-item"
+                                        target="_blank" rel="noreferrer"
+                                    >
+                                        Repo
+                                    </a>
+                                    <a>|</a>
+                                    <a
+                                        href={project.live}
+                                        className="card-footer-item"
+                                        target="_blank" rel="noreferrer"
+                                    >
+                                        Live Site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            ))}
+
+        </div>
     );
-  }
-const working = [
-    {
-      id: 0,
-      title: "MAC",
-      image: "/assets/images/marvel-search.png",
-      repo: "https://github.com/Cienna97/MAC.git",
-      live: "https://mac-project.herokuapp.com/",
-    },
-    {
-      id: 1,
-      title: "Work-Day-Schedular",
-      image: "/assets/images/work-day.png",
-      repo: "https://github.com/Cienna97/work-day-scheduler.git",
-      live: "https://cienna97.github.io/work-day-scheduler/",
-    },
-    {
-        id: 2,
-        title: "whattoeat",
-        image: "/assets/images/what-eat.png",
-        repo: "https://github.com/Cienna97/whattoeat.git",
-        live: "https://cienna97.github.io/whattoeat/",
-      },
-    
-  ];
-  
- 
+}
+
 export default Project;
-        
