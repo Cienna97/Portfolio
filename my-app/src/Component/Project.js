@@ -11,7 +11,7 @@ function Project(props) {
                                 </p>
                         <figure>
                             <a href={project.live} target="_blank" rel="noreferrer">
-                                <img className="img"src={process.env.PUBLIC_URL + project.image} alt="Placeholder image" />
+                                <img className="img"src={process.env.PUBLIC_URL + project.image} alt="Placeholde" />
                             </a>
                         </figure>
                     </div>

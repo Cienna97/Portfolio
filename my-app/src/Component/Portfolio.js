@@ -17,7 +17,7 @@ const projects = [
     {
       id: 0,
       title: "MAC",
-      image: "/assets/images/marvel-search.png",
+      image: "/Users/banthamac/Desktop/Project/Portfolio/my-app/public/images/marvel-search.png",
       repo: "https://github.com/Cienna97/MAC.git",
       live: "https://mac-project.herokuapp.com/",
     },
